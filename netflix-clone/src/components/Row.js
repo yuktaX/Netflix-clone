@@ -2,7 +2,7 @@ import React from 'react'
 import Movie from './Movie';
 import { MdChevronRight, MdChevronLeft } from "react-icons/md"
 
-export default function Row({title, fetchURL, id}) {
+export default function Row({title, fetchURL, rowId}) {
 
   const [movies, setMovies] = React.useState([])
 
@@ -19,12 +19,13 @@ export default function Row({title, fetchURL, id}) {
   }, [])
 
   const slideLeft = () => {
-    var slider = document.getElementById('slider' + id);
+    var slider = document.getElementById('slider' + rowId);
     slider.scrollLeft = slider.scrollLeft - 500;
+
   };
 
   const slideRight = () => {
-    var slider = document.getElementById('slider' + id);
+    var slider = document.getElementById('slider' + rowId);
     slider.scrollRight = slider.scrollRight + 500;
     console.log("hellooo")
   };
@@ -37,16 +38,16 @@ export default function Row({title, fetchURL, id}) {
           onClick={slideLeft} 
           className='left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
           size={40} 
-          id={'slider' + id}
           />
-        <div id={'slider' + id} className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'>
+        <div 
+          id={'slider' + rowId} 
+          className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'>
             {movies.map((movie, id) => (
               <Movie movie={movie} key={id}/>
             ))}
         </div>
         <MdChevronRight 
           onClick={slideRight}
-          id={'slider' + id}
           className='right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
           size={40} />
       </div>
