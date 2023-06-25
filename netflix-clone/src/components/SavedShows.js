@@ -23,12 +23,12 @@ const SavedShows = () => {
     
       const slideRight = () => {
         var slider = document.getElementById('slider');
-        slider.scrollRight = slider.scrollRight + 500;
+        slider.scrollLeft = slider.scrollLeft + 500;
       };
     return (
         <div>
             <h2 className='text-white font-bold md:text-xl p-4'>My Shows</h2>
-            <div className='absolute flex items-center group bg-red-100 w-screen'>
+            <div className='absolute flex items-center group w-screen'>
                 <MdChevronLeft
                 onClick={slideLeft} 
                 className='left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
@@ -36,7 +36,7 @@ const SavedShows = () => {
                 />
                 <div id={'slider'} className='h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'>
                     {movies.map((movie, id) => (
-                    <div className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer p-2'>
+                    <div className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'>
                         <img 
                             className='w-full h-auto block' 
                             src={`https://image.tmdb.org/t/p/w500/${movie?.img}`} 

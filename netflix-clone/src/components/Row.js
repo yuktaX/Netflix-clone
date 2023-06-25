@@ -26,8 +26,8 @@ export default function Row({title, fetchURL, rowId}) {
 
   const slideRight = () => {
     var slider = document.getElementById('slider' + rowId);
-    slider.scrollRight = slider.scrollRight + 500;
-    console.log("hellooo")
+    slider.scrollLeft = slider.scrollLeft + 500;
+    console.log(slider.scrollRight, slider.scrollLeft)
   };
 
   return (
