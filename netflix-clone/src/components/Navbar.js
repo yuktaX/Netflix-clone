@@ -53,11 +53,11 @@ const Navbar = () => {
             />
 
             <ul className='hidden space-x-4 md:flex'>
-                <li className='navLink'>Home</li>
+                <li className='navLink'><Link to='/home'>Home</Link> </li>
                 <li className='navLink'>TV Shows</li>
                 <li className='navLink'>Movies</li>
                 <li className='navLink'>New & Popular</li>
-                <li className='navLink'>My List</li>
+                <li className='navLink'><Link to='/account'>My List</Link> </li>
             </ul>
         </div>
 

@@ -8,10 +8,12 @@ import Navbar from './components/Navbar';
 import NavbarSignUp from './components/NavbarSignUp';
 import { AuthContextProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import { RecoilRoot } from 'recoil';
 
 export default function App() {
 
   return (
+    <RecoilRoot>
     <main >
       {/* <Navbar /> */}
       <AuthContextProvider>
@@ -39,6 +41,7 @@ export default function App() {
       </Routes>
       </AuthContextProvider>
     </main>
+    </RecoilRoot>
   )
 }
 
